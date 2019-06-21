@@ -14,7 +14,7 @@ yarn install
 ```
 
 ## Usage
-
+Make sure you have the Beddit server running, then run
 ```sh
 yarn start
 ```

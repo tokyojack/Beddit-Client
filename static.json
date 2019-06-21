@@ -5,7 +5,7 @@
     },
     "proxies": {
         "/api":{
-            "origin": "https://beddit-server-jc.herokuapp.com/" 
+            "origin": "https://beddit-server-jc.herokuapp.com/api" 
         }
     }
 }

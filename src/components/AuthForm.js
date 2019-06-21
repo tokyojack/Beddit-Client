@@ -38,7 +38,6 @@ export class AuthForm extends Component {
 
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
                     {errors.message && (<Alert style={{ marginTop: "20px" }} variant="danger" >{errors.message}</Alert>)}
                     <Row>
                         <Col></Col>
@@ -96,7 +95,6 @@ export class AuthForm extends Component {
                         </Col>
                         <Col></Col>
                     </Row>
-                </form>
             </div>
         )
     }

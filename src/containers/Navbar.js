@@ -24,6 +24,7 @@ export class Navbar extends Component {
                                     <Link to="/signup"><Button variant="primary">Signup</Button></Link>
                                 </div>) :
                                 (<div>
+                                     <Link to="/"><Button variant="info">Home</Button></Link>
                                     <Button onClick={this.logout} variant="info">Logout</Button>
                                 </div>)
                             }

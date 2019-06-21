@@ -27,9 +27,16 @@ export class PostItem extends Component {
         }
 
         this.props.fetchPostsChangePost(id, user_id, amount);
+        let newCurrentPoints = 0;
+        if(this.props.upvotedUsers.length === 0 && this.props.downvotedUsers.length === 0){
+            newCurrentPoints = amount
+        } else {
+            newCurrentPoints = ((this.props.upvotedUsers.length + (amount >= 1 ? 1 : -1)) - (this.props.downvotedUsers.length + (amount <= -1 ? 1 : -1)))
+        }
+
         this.setState({
             userPointChoice: amount,
-            currentPoints: ((this.props.upvotedUsers.length + (amount >= 1 ? 1 : -1)) - (this.props.downvotedUsers.length + (amount <= -1 ? 1 : -1)))
+            currentPoints: newCurrentPoints
         });
     }
 
@@ -63,7 +70,6 @@ export class PostItem extends Component {
                                 }
 
                             </div>
-
                         </Col>
                         <Col className="my-auto">
                             <Card.Title ><Link to={`/post/${_id}`}>{title}</Link> by <span style={{ fontSize: "20px" }}>{user.username}</span></Card.Title>

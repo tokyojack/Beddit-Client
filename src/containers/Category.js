@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import PostItem from '../components/PostItem';
 import LoadingIcon from '../components/LoadingIcon';
 import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom"
 
 export class Category extends Component {
 
@@ -21,8 +23,8 @@ export class Category extends Component {
         return (
             <div>
                 {errors.message && (<Alert style={{ marginTop: "20px" }} variant="danger" >{errors.message}</Alert>)}
-                <h1 style={{ paddingBottom: "30px", paddingTop: "20px" }}>{name}: </h1>
-
+                <h1 style={{ paddingTop: "20px" }}>{name}: </h1>
+                <Link to={`/create/${name}`}><Button variant="outline-primary" style={{ marginBottom: "30px" }}>Create</Button></Link>
                 {posts.values.map(post => <PostItem key={post._id} {...post} {...this.props} />)}
             </div>
         )
